@@ -4,7 +4,7 @@ import { User } from '../../entities/user.js';
 const userSchema = new Schema<User>({
   userName: {
     type: String,
-    unique: true,
+    required: true,
   },
   password: {
     type: String,

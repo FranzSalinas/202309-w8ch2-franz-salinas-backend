@@ -28,8 +28,9 @@ footballersRouter.post(
 footballersRouter.patch(
   '/:id',
   interceptor.authorization.bind(interceptor),
+  fileInterceptor.singleFileStore('imageFootballer').bind(fileInterceptor),
   interceptor.authentificationFootballers.bind(interceptor),
-  controller.create.bind(controller)
+  controller.update.bind(controller)
 );
 footballersRouter.delete(
   '/:id',
